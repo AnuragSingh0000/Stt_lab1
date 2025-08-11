@@ -1,6 +1,7 @@
-# Code for TO DO 
+"""Code for TO DO"""
 
 def display_menu():
+    """Function to display the possible tasks"""
     print("\n--- To-Do List Menu ---")
     print("1. Add a task")
     print("2. Remove a task")
@@ -9,6 +10,7 @@ def display_menu():
     print("5. Exit")
 
 def add_task(tasks):
+    """Function to add tasks"""
     task = input("Enter a new task: ").strip()
     if task:
         tasks.append({"task": task, "done": False})
@@ -17,6 +19,7 @@ def add_task(tasks):
         print("Task cannot be empty.")
 
 def remove_task(tasks):
+    """Function to remove tasks"""
     view_tasks(tasks)
     if not tasks:
         return
@@ -31,6 +34,7 @@ def remove_task(tasks):
         print("Please enter a valid number.")
 
 def mark_done(tasks):
+    """Function to mark completed tasks"""
     view_tasks(tasks)
     if not tasks:
         return
@@ -45,6 +49,7 @@ def mark_done(tasks):
         print("Please enter a valid number.")
 
 def view_tasks(tasks):
+    """Function to view all the tasks"""
     if not tasks:
         print("No tasks in your to-do list.")
         return
@@ -54,6 +59,7 @@ def view_tasks(tasks):
         print(f"{i}. [{status}] {task['task']}")
 
 def main():
+    """Main function"""
     tasks = []
     while True:
         display_menu()
